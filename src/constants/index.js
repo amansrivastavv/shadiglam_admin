@@ -58,26 +58,13 @@ export const MENU_ITEMS = [
   },
 ];
 
-export const LEADS_DATA = [
-  {
-    name: 'Ekta Mishra',
-    budget: 'Rs 5000 - Rs 7000',
-    eventDate: '26-Apr-2026',
-    uploadedOn: '24-Feb-2026',
-    tentativeDate: 'NA'
-  },
-  {
-    name: 'Chanchal Chauhan',
-    budget: 'Rs 10000 - Rs 12000',
-    eventDate: '29-Apr-2026',
-    uploadedOn: '21-Feb-2026',
-    tentativeDate: 'NA'
-  },
-  {
-    name: 'Meghana',
-    budget: 'Rs 5000 - Rs 7000',
-    eventDate: '12-Mar-2026',
-    uploadedOn: '21-Feb-2026',
-    tentativeDate: '8 or 12 March Tentative'
-  }
-];
+export const LEADS_DATA = Array.from({ length: 20 }, (_, i) => ({
+  name: i % 3 === 0 ? 'Ekta Mishra' : i % 3 === 1 ? 'Chanchal Chauhan' : 'Meghana',
+  budget: i % 2 === 0 ? 'Rs 5000 - Rs 7000' : 'Rs 10000 - Rs 12000',
+  eventDate: `${20 + (i % 10)}-Apr-2026`,
+  uploadedOn: '24-Feb-2026',
+  tentativeDate: i % 5 === 0 ? 'NA' : 'Confirmed',
+  requirement: i % 2 === 0 ? 'Engagement Makeup-HD' : 'Bridal Makeup',
+  location: i % 4 === 0 ? 'Patiala, Punjab' : i % 4 === 1 ? 'Ludhiana' : 'Delhi',
+  type: i % 4 === 0 ? 'prime' : 'new'
+}));
