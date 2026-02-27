@@ -8,7 +8,7 @@ import Header from '@/components/layout/Header';
 
 // Dashboard Components
 import StatsCards from '@/components/dashboard/StatsCards';
-import PromotionBanner from '@/components/dashboard/PromotionBanner';
+// import PromotionBanner from '@/components/dashboard/PromotionBanner';
 import LeadsSection from '@/components/dashboard/LeadsSection';
 import WhatsAppFloat from '@/components/dashboard/WhatsAppFloat';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -16,7 +16,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [showBanner, setShowBanner] = useState(true);
+  // const [showBanner, setShowBanner] = useState(true);
 
   return (
     <div className="flex h-screen w-screen overflow-hidden bg-slate-50 font-sans text-slate-900 relative">
@@ -39,12 +39,13 @@ export default function AdminDashboard() {
             {/* Credit Summary Cards */}
             <StatsCards />
 
-            {/* Featured Artist / Promotion Spot (Dismissible) */}
+            {/* Featured Artist / Promotion Spot (Dismissible)
             <AnimatePresence>
               {showBanner && (
                 <PromotionBanner onClose={() => setShowBanner(false)} />
               )}
             </AnimatePresence>
+            */}
 
             {/* Leads Management Section */}
             <LeadsSection />

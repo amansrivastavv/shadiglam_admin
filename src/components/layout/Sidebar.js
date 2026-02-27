@@ -88,7 +88,7 @@ export default function Sidebar({ activeTab, onTabChange, isOpen, onClose }) {
             whileHover={{ scale: 1.02 }}
             className="bg-white/10 p-4 rounded-2xl border border-white/10 backdrop-blur-md flex items-center gap-4 cursor-pointer group hover:bg-white/15 transition-all"
           >
-             <div className="w-10 h-10 bg-white text-indigo-900 rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
+             <div className="w-10 h-10 bg-white text-brand-primary rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
                 <LayoutGrid size={20} />
              </div>
              <div className="flex flex-col text-left">

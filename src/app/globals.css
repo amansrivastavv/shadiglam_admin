@@ -2,14 +2,14 @@
 
 @theme {
   --color-brand-red: #e54b4b;
-  --color-brand-blue: #5871e5;
+  --color-brand-primary: #ec4899; /* Vibrant Pink */
   --color-divider: rgba(255, 255, 255, 0.1);
   
   --font-sans: var(--font-inter), ui-sans-serif, system-ui;
 }
 
 :root {
-  --primary: #5871e5;
+  --primary: #ec4899; /* Vibrant Pink */
   --secondary: #703351;
   --accent: #e54b4b;
 }
@@ -20,12 +20,16 @@ body {
 }
 
 /* Custom Gradients & Specific Shapes that are cleaner in CSS */
+.brand-gradient {
+  background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);
+}
+
 .sidebar-gradient {
   background: linear-gradient(180deg, #703351 0% , #3e385e 50%, #343f66 100%);
 }
 
 .card-mesh {
-  background: radial-gradient(circle at top right, rgba(88, 113, 229, 0.03) 0%, transparent 70%);
+  background: radial-gradient(circle at top right, rgba(30, 41, 59, 0.03) 0%, transparent 70%);
 }
 
 .whatsapp-gradient {

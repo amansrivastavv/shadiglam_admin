@@ -44,7 +44,7 @@ export default function LeadsSection() {
                {activeTab === tab.id && (
                  <motion.div 
                    layoutId="tab-pill"
-                   className="absolute inset-0 bg-brand-blue rounded-lg md:rounded-xl z-0 shadow-lg shadow-brand-blue/20"
+                   className="absolute inset-0 bg-brand-primary rounded-lg md:rounded-xl z-0 shadow-lg shadow-brand-primary/20"
                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                  />
                )}
@@ -93,11 +93,11 @@ export default function LeadsSection() {
 
       <div className="p-4 md:p-6 flex flex-col sm:flex-row gap-3 md:gap-4 items-center bg-white border-b border-slate-50">
         <div className="relative flex-1 group w-full">
-          <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-brand-blue transition-colors" />
+          <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-brand-primary transition-colors" />
           <input 
             type="text" 
             placeholder="Search leads..." 
-            className="w-full pl-10 pr-4 py-2.5 md:py-3.5 bg-slate-50 border border-slate-200 rounded-xl md:rounded-2xl text-xs md:text-sm outline-none focus:bg-white focus:border-brand-blue transition-all font-medium"
+            className="w-full pl-10 pr-4 py-2.5 md:py-3.5 bg-slate-50 border border-slate-200 rounded-xl md:rounded-2xl text-xs md:text-sm outline-none focus:bg-white focus:border-brand-primary transition-all font-medium"
           />
         </div>
         
@@ -167,20 +167,21 @@ export default function LeadsSection() {
               </div>
               <div className="p-8 space-y-6">
                 <div className="grid grid-cols-2 gap-6">
-                   <DetailItem label="Budget Range" value={selectedLead.budget} icon={<IndianRupee size={16}/>} />
+                   <DetailItem label="Uploaded On" value={selectedLead.uploadedOn} icon={<Clock size={16}/>} />
                    <DetailItem label="Event Date" value={selectedLead.eventDate} icon={<Calendar size={16}/>} />
+                   <DetailItem label="Requirement" value={selectedLead.requirement} icon={<Search size={16}/>} />
+                   <DetailItem label="Budget" value={selectedLead.budget} icon={<IndianRupee size={16}/>} />
                    <DetailItem label="Location" value={selectedLead.location} icon={<MapPin size={16}/>} />
-                   <DetailItem label="Requirements" value={selectedLead.requirement} icon={<Search size={16}/>} />
                 </div>
-                <div className="p-6 bg-brand-blue/5 rounded-2xl border border-brand-blue/10">
-                   <p className="text-xs font-black text-brand-blue uppercase tracking-widest mb-2">Message from Customer</p>
+                <div className="p-6 bg-brand-primary/5 rounded-2xl border border-brand-primary/10">
+                   <p className="text-xs font-black text-brand-primary uppercase tracking-widest mb-2">Message from Customer</p>
                    <p className="text-sm text-slate-600 leading-relaxed font-medium italic">
                      &ldquo;Looking for a premium venue with catering for 200+ guests. Interested in Shadi Glam&apos;s exclusive wedding packages.&rdquo;
                    </p>
                 </div>
               </div>
               <div className="p-6 bg-slate-50 border-t border-slate-100 flex gap-4">
-                 <button className="flex-1 py-4 bg-brand-blue text-white rounded-2xl font-black uppercase text-sm shadow-xl shadow-brand-blue/20 hover:brightness-110 transition-all active:scale-95">
+                 <button className="flex-1 py-4 bg-brand-primary text-white rounded-2xl font-black uppercase text-sm shadow-xl shadow-brand-primary/20 hover:brightness-110 transition-all active:scale-95">
                    Unlock Full Contact
                  </button>
                  <button 
@@ -207,9 +208,9 @@ function DetailItem({ label, value, icon }) {
         </div>
         <span className="text-[10px] font-black uppercase tracking-widest">{label}</span>
       </div>
-      <p className="text-sm font-bold text-slate-800 ml-10">{value}</p>
+      <p className="text-sm font-bold text-slate-800 ml-10 flex-1">{value}</p>
     </div>
   );
 }
 
-import { X, IndianRupee, Calendar, MapPin } from 'lucide-react';
+import { X, IndianRupee, Calendar, MapPin, Clock } from 'lucide-react';

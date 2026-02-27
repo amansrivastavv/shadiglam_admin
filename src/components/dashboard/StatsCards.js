@@ -13,7 +13,7 @@ export default function StatsCards() {
         <span className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest">Credit Available</span>
         <div className="flex items-center gap-3 md:gap-4 my-3 md:my-4">
           <span className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-none">156</span>
-          <span className="bg-brand-blue/10 text-brand-blue px-2.5 py-1 rounded-full text-[10px] md:text-xs font-bold flex items-center">
+          <span className="bg-brand-primary/10 text-brand-primary px-2.5 py-1 rounded-full text-[10px] md:text-xs font-bold flex items-center">
              <Sparkles size={10} className="mr-1 md:mr-1.5" />
              Standard
           </span>
@@ -36,7 +36,7 @@ export default function StatsCards() {
 
         <motion.button 
           whileTap={{ scale: 0.95 }}
-          className="mt-6 self-start px-4 py-2 bg-brand-blue text-white rounded-xl font-bold text-xs shadow-md shadow-brand-blue/20 hover:brightness-110 transition-all uppercase"
+          className="mt-6 self-start px-4 py-2 bg-brand-primary text-white rounded-xl font-bold text-xs shadow-md shadow-brand-primary/20 hover:brightness-110 transition-all uppercase"
         >
           Renew Plan
         </motion.button>
