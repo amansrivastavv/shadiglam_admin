@@ -64,7 +64,7 @@ export const LEADS_DATA = Array.from({ length: 20 }, (_, i) => ({
   eventDate: i === 0 ? '03/12/2026' : `${20 + (i % 10)}-Apr-2026`,
   uploadedOn: i === 0 ? '26/02/2026' : '24-Feb-2026',
   tentativeDate: i % 5 === 0 ? 'NA' : 'Confirmed',
-  requirement: i === 0 ? 'Bridal makeup HD' : (i % 2 === 0 ? 'Engagement Makeup-HD' : 'Bridal Makeup'),
-  location: i === 0 ? 'Bhayander west (Mumbai)' : (i % 4 === 0 ? 'Patiala, Punjab' : i % 4 === 1 ? 'Ludhiana' : 'Delhi'),
+  requirement: i === 0 ? 'Engagement Makeup HD + Bridal Makeup HD + 3 Party Makeup-HD (20th and 25th april ) 1 sister Makeup extra' : (i % 2 === 0 ? 'Engagement Makeup-HD' : 'Bridal Makeup'),
+  location: i === 0 ? 'Bhayander west near Golden Square mumbai' : (i % 4 === 0 ? 'Patiala, Punjab' : i % 4 === 1 ? 'Ludhiana' : 'Delhi'),
   type: i % 4 === 0 ? 'prime' : 'new'
 }));

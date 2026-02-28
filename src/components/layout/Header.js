@@ -19,20 +19,41 @@ export default function Header({ activeTab, onMenuClick }) {
   }, []);
   
   return (
-    <header className="h-20 flex justify-between items-center px-6 md:px-10 bg-white/80 backdrop-blur-xl sticky top-0 z-40 border-b border-slate-100">
-      <div className="flex items-center gap-4">
+    <header className="h-20 flex justify-between items-center px-6 md:px-10 bg-white/90 backdrop-blur-xl sticky top-0 z-40 border-b border-pink-100 holi-bg-mesh">
+      {/* Holi Background Container (with overflow-hidden) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Holi Floating Colors */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="holi-dot w-32 h-32 bg-pink-400 left-[10%] top-[-20%] animate-subtle" style={{ animationDelay: '0s' }}></div>
+          <div className="holi-dot w-24 h-24 bg-purple-400 left-[40%] top-[40%] animate-subtle" style={{ animationDelay: '1s' }}></div>
+          <div className="holi-dot w-40 h-40 bg-yellow-400 right-[5%] top-[-10%] animate-subtle" style={{ animationDelay: '2s' }}></div>
+          <div className="holi-dot w-20 h-20 bg-emerald-400 right-[30%] bottom-[-10%] animate-subtle" style={{ animationDelay: '1.5s' }}></div>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-4 relative z-10">
         <button 
           onClick={onMenuClick}
           className="lg:hidden p-2 hover:bg-slate-100 rounded-xl text-slate-600 transition-all"
         >
           <Menu size={24} />
         </button>
-        <div className="text-sm font-medium text-slate-400 hidden sm:block">
-          Home / <span className="text-slate-900 font-bold">{currentLabel}</span>
+        <div className="flex flex-col">
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] font-black uppercase tracking-widest text-pink-500 flex items-center gap-1 bg-pink-50 px-2 py-0.5 rounded-full border border-pink-100">
+              <span className="animate-pulse">✨</span> Festival of Colors
+            </span>
+          </div>
+          <div className="text-sm font-medium text-slate-400 hidden sm:block mt-0.5">
+            Home / <span className="text-transparent bg-clip-text bg-linear-to-r from-pink-500 via-purple-500 to-orange-500 font-black">{currentLabel}</span>
+          </div>
         </div>
       </div>
 
-      <div className="flex items-center gap-3 md:gap-6">
+      <div className="flex items-center gap-3 md:gap-6 relative z-10">
+        <div className="hidden md:flex items-center px-4 py-1.5 bg-linear-to-r from-pink-500 to-orange-500 rounded-full text-white text-[11px] font-black uppercase tracking-wider shadow-lg shadow-pink-500/20 active:scale-95 transition-all cursor-default">
+           Happy Holi 🎨
+        </div>
         <button className="p-2 text-slate-400 hover:text-brand-primary hover:bg-slate-50 rounded-full transition-all">
           <Search size={20} />
         </button>

@@ -151,42 +151,49 @@ export default function LeadsSection() {
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              className="relative w-full max-w-lg bg-white rounded-[32px] shadow-2xl overflow-hidden flex flex-col"
+              className="relative w-full max-w-lg max-h-[90vh] bg-white rounded-[24px] md:rounded-[32px] shadow-2xl overflow-hidden flex flex-col mx-auto"
             >
-              <div className="p-8 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+              {/* Fixed Header */}
+              <div className="p-5 md:p-8 border-b border-slate-100 flex justify-between items-center bg-slate-50/50 shrink-0">
                 <div>
-                  <h3 className="text-xl font-black text-slate-900">{selectedLead.name}</h3>
-                  <p className="text-sm text-slate-400 font-bold uppercase tracking-tighter mt-1">Lead Details Card</p>
+                  <h3 className="text-lg md:text-xl font-black text-slate-900 line-clamp-1">{selectedLead.name}</h3>
+                  <p className="text-[10px] md:text-xs text-slate-400 font-bold uppercase tracking-tighter mt-1">Lead Details Card</p>
                 </div>
                 <button 
                   onClick={() => setSelectedLead(null)}
-                  className="p-3 bg-white hover:bg-slate-100 rounded-2xl shadow-sm border border-slate-200 transition-all active:scale-95"
+                  className="p-2 md:p-3 bg-white hover:bg-slate-100 rounded-xl md:rounded-2xl shadow-sm border border-slate-200 transition-all active:scale-95 ml-4"
                 >
-                  <X size={20} className="text-slate-600" />
+                  <X size={18} className="md:w-5 md:h-5 text-slate-600" />
                 </button>
               </div>
-              <div className="p-8 space-y-6">
-                <div className="grid grid-cols-2 gap-6">
+
+              {/* Scrollable Content */}
+              <div className="p-5 md:p-8 space-y-6 overflow-y-auto custom-scrollbar flex-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                    <DetailItem label="Uploaded On" value={selectedLead.uploadedOn} icon={<Clock size={16}/>} />
                    <DetailItem label="Event Date" value={selectedLead.eventDate} icon={<Calendar size={16}/>} />
                    <DetailItem label="Requirement" value={selectedLead.requirement} icon={<Search size={16}/>} />
                    <DetailItem label="Budget" value={selectedLead.budget} icon={<IndianRupee size={16}/>} />
                    <DetailItem label="Location" value={selectedLead.location} icon={<MapPin size={16}/>} />
                 </div>
-                <div className="p-6 bg-brand-primary/5 rounded-2xl border border-brand-primary/10">
-                   <p className="text-xs font-black text-brand-primary uppercase tracking-widest mb-2">Message from Customer</p>
-                   <p className="text-sm text-slate-600 leading-relaxed font-medium italic">
-                     &ldquo;Looking for a premium venue with catering for 200+ guests. Interested in Shadi Glam&apos;s exclusive wedding packages.&rdquo;
+                
+                <div className="p-5 md:p-6 bg-brand-primary/5 rounded-2xl border border-brand-primary/10">
+                   <p className="text-[10px] md:text-xs font-black text-brand-primary uppercase tracking-widest mb-3">Message from Customer</p>
+                   <p className="text-sm text-slate-700 leading-relaxed font-bold italic">
+                     &ldquo;I am looking for the best look for my event. 
+                     Kindly share your professional profile for my review.&rdquo;
                    </p>
                 </div>
               </div>
-              <div className="p-6 bg-slate-50 border-t border-slate-100 flex gap-4">
-                 <button className="flex-1 py-4 bg-brand-primary text-white rounded-2xl font-black uppercase text-sm shadow-xl shadow-brand-primary/20 hover:brightness-110 transition-all active:scale-95">
+
+              {/* Fixed Footer */}
+              <div className="p-4 md:p-6 bg-slate-50 border-t border-slate-100 flex flex-col sm:flex-row gap-3 md:gap-4 shrink-0">
+                 <button className="flex-1 py-3 md:py-4 bg-brand-primary text-white rounded-xl md:rounded-2xl font-black uppercase text-xs md:text-sm shadow-xl shadow-brand-primary/20 hover:brightness-110 transition-all active:scale-95">
                    Unlock Full Contact
                  </button>
                  <button 
                    onClick={() => setSelectedLead(null)}
-                   className="flex-1 py-4 bg-white border border-slate-200 text-slate-600 rounded-2xl font-black uppercase text-sm hover:bg-slate-50 transition-all active:scale-95"
+                   className="flex-1 py-3 md:py-4 bg-white border border-slate-200 text-slate-600 rounded-xl md:rounded-2xl font-black uppercase text-xs md:text-sm hover:bg-slate-50 transition-all active:scale-95"
                  >
                    Discard
                  </button>

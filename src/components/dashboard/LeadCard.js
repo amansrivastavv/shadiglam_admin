@@ -36,41 +36,40 @@ export default function LeadCard({ lead, index, onViewDetails }) {
         )}
       </div>
 
-      <div className="flex flex-col gap-2">
-        <div className="flex justify-between items-center p-3 rounded-xl bg-linear-to-r from-brand-primary/15 to-rose-500/10 border border-brand-primary/20">
-           <div className="flex items-center gap-2">
-             <div className="p-1.5 brand-gradient rounded-md shadow-sm text-white">
-               <IndianRupee size={14} />
-             </div>
-             <span className="text-[11px] font-bold text-brand-primary uppercase tracking-wider">Budget</span>
+      <div className="grid grid-cols-2 gap-2.5">
+        <div className="flex flex-col gap-2 p-3 rounded-xl bg-pink-50/50 border border-pink-100/50 hover:bg-pink-50 transition-colors shadow-xs min-w-0">
+           <div className="flex items-center gap-1.5 text-pink-500">
+             <Tag size={12} strokeWidth={3} />
+             <span className="text-[9px] font-black uppercase tracking-wider">Needs</span>
            </div>
-           <span className="text-sm font-black text-slate-800">{lead.budget}</span>
+           <span className="text-xs font-black text-slate-800 line-clamp-1" title={lead.requirement}>{lead.requirement}</span>
+        </div>
+
+        <div className="flex flex-col gap-2 p-3 rounded-xl bg-emerald-50/50 border border-emerald-100/50 hover:bg-emerald-50 transition-colors shadow-xs min-w-0">
+           <div className="flex items-center gap-1.5 text-emerald-600">
+             <MapPin size={12} strokeWidth={3} />
+             <span className="text-[9px] font-black uppercase tracking-wider">Location</span>
+           </div>
+           <span className="text-xs font-black text-slate-800 line-clamp-1" title={lead.location}>{lead.location}</span>
         </div>
         
-        <div className="flex justify-between items-center p-3 rounded-xl bg-slate-100 border border-slate-200">
-           <div className="flex items-center gap-2">
-             <div className="p-1.5 bg-white rounded-md shadow-sm text-slate-600">
-               <Calendar size={14} />
-             </div>
-             <span className="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Event</span>
+        <div className="flex flex-col gap-2 p-3 rounded-xl bg-amber-50/50 border border-amber-100/50 hover:bg-amber-50 transition-colors shadow-xs">
+           <div className="flex items-center gap-1.5 text-amber-600">
+             <Calendar size={12} strokeWidth={3} />
+             <span className="text-[9px] font-black uppercase tracking-wider">Event</span>
            </div>
-           <span className="text-sm font-black text-slate-800">{lead.eventDate}</span>
+           <span className="text-xs font-black text-slate-800">{lead.eventDate}</span>
         </div>
-      </div>
 
-      <div className="grid grid-cols-2 gap-x-4 gap-y-3 p-3 bg-slate-50/50 rounded-xl border border-slate-100">
-        {[
-          { icon: <MapPin size={13}/>, label: 'Location', value: lead.location },
-          { icon: <Clock size={13}/>, label: 'Needs', value: lead.requirement },
-        ].map((item, i) => (
-          <div key={i} className="flex flex-col min-w-0">
-            <div className="flex items-center gap-1 text-slate-400 mb-0.5">
-              {item.icon}
-              <span className="text-[9px] font-bold uppercase tracking-wider">{item.label}</span>
-            </div>
-            <span className="text-[11px] font-bold text-slate-700 truncate">{item.value}</span>
+        {lead.budget && isPrime && (
+          <div className="flex flex-col gap-2 p-3 rounded-xl bg-slate-100 border border-slate-200 hover:bg-slate-200/50 transition-colors shadow-xs">
+             <div className="flex items-center gap-1.5 text-slate-500">
+               <IndianRupee size={12} strokeWidth={3} />
+               <span className="text-[9px] font-black uppercase tracking-wider">Budget</span>
+             </div>
+             <span className="text-xs font-black text-slate-800">{lead.budget}</span>
           </div>
-        ))}
+        )}
       </div>
 
       <div className="flex gap-2">
@@ -82,7 +81,7 @@ export default function LeadCard({ lead, index, onViewDetails }) {
           onClick={onViewDetails}
           className="flex-1 py-2 bg-white border border-slate-200 text-slate-600 rounded-lg text-[11px] font-bold hover:bg-slate-100 transition-all active:scale-95 uppercase"
         >
-          Details
+          More Details
         </button>
       </div>
     </motion.div>

@@ -5,6 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { LayoutGrid, X } from 'lucide-react';
 import { MENU_ITEMS } from '@/constants';
 
+import { useTheme } from '@/providers/ThemeProvider';
+import { Palette, Sparkles } from 'lucide-react';
+
 export default function Sidebar({ activeTab, onTabChange, isOpen, onClose }) {
   const [isMobile, setIsMobile] = useState(false);
 
